@@ -1,0 +1,30 @@
+$def with (personas)
+
+<h1>Lista de Personas</h1>
+
+<table border="1" style="width: 100%; text-align: left;">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>telefono</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        $if len(personas) > 0:
+            $for persona in personas:
+                <tr>
+                    <td>${persona["id"]}</td>
+                    <td>${persona["nombre"]}</td>
+                    <td>${persona["telefono"]}</td>
+                    <td>
+                        <a href="/personas/editar_persona/${persona['id']}">Editar</a>
+                    </td>
+                </tr>
+        $else:
+            <tr>
+                <td colspan="4">No hay personas registradas.</td>
+            </tr>
+    </tbody>
+  </table>
