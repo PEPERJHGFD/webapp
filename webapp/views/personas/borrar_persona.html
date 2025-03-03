@@ -1,0 +1,17 @@
+$def with (persona, mensaje_error=None)
+
+<h1>Confirmar Eliminación</h1>
+
+$if mensaje_error:
+    <div class="alert alert-danger">
+        $mensaje_error
+    </div>
+
+<div class="alert alert-warning">
+    ¿Está seguro que desea eliminar a <strong>${persona['nombre']}</strong>?
+</div>
+
+<form method="POST">
+    <button type="submit" class="btn btn-danger">Sí, Eliminar</button>
+    <a href="/personas/lista_personas" class="btn btn-secondary">Cancelar</a>
+</form>

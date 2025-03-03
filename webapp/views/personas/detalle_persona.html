@@ -1,0 +1,14 @@
+$def with (persona)
+
+<h1>Detalle de Persona</h1>
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">${persona["nombre"]}</h5>
+        <p class="card-text"><strong>Teléfono:</strong> ${persona["telefono"]}</p>
+        
+        <a href="/personas/editar_persona/${persona['id']}" class="btn btn-primary">Editar</a>
+        <a href="/personas/eliminar_persona/${persona['id']}" class="btn btn-danger">Borrar</a>
+        <a href="/personas/lista_personas" class="btn btn-secondary">Volver a la lista</a>
+    </div>
+</div>

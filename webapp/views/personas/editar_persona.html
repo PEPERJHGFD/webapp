@@ -1,0 +1,23 @@
+$def with (persona, mensaje_error=None)
+
+<h1>Editar Persona</h1>
+
+$if mensaje_error:
+    <div class="alert alert-danger">
+        $mensaje_error
+    </div>
+
+<form method="POST">
+    <div class="form-group">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" class="form-control" value="${persona['nombre']}" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="telefono">Teléfono:</label>
+        <input type="text" id="telefono" name="telefono" class="form-control" value="${persona['telefono']}">
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Actualizar</button>
+    <a href="/personas/lista_personas" class="btn btn-secondary">Cancelar</a>
+</form>
